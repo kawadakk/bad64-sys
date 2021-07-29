@@ -1,0 +1,13 @@
+[package]
+name = "genbinding"
+version = "0.0.0"
+edition = "2018"
+description = "Binding generator for bad64-sys"
+publish = false
+
+[[bin]]
+name = "genbinding"
+path = "main.rs"
+
+[dependencies]
+bindgen = { version = "0.59", default-features = false, features = ["runtime"] }

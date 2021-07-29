@@ -1,3 +1,6 @@
+[workspace]
+members = [".", "genbinding"]
+
 [package]
 name = "bad64-sys"
 version = "0.3.0"
@@ -8,10 +11,19 @@ license = "Apache-2.0"
 repository = "https://github.com/yrp604/bad64-sys"
 categories = ["external-ffi-bindings"]
 
+include = [
+	"/README.md",
+	"/LICENSE",
+	"/src",
+	
+	"/aarch-arm64",
+	"!/aarch-arm64/disassembler/test*",
 
-[dependencies]
+	# Make sure to include the generated binding and exclude the generation tool
+	"binding/bindings.rs",
+	"!/genbinding",
+]
 
 [build-dependencies]
-bindgen = { version = "0.59", default-features = false, features = ["runtime"] }
 cc = { version = "1", features = ["parallel"] }
 glob = "0.3"

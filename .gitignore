@@ -1,3 +1,4 @@
 /target
 /arch-arm64/disassembler/test
 Cargo.lock
+/binding
